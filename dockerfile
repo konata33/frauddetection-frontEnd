@@ -1,7 +1,16 @@
 # build stage
 FROM node:20-alpine as builder
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
 COPY . .
-RUN npm run build
+RUN npm i -g pnpm
+RUN pnpm install
+RUN pnpm run build
+
+# runtime stage
+FROM nginx:stable-alpine as runtime
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# expose port and define CMD
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
