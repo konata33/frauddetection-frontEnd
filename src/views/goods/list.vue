@@ -26,14 +26,13 @@
 </template>
 
 <script lang="ts" setup>
-import { getMenuList } from '@/api/auth';
 import { goodsDelete, goodsList } from '@/api/goods';
 import { useTable } from '@/hooks/useTable';
 import { ref } from 'vue';
 import AddOrUpdate from './components/goodsItem.vue';
 
 const addOrUpdateRef = ref();
-const allMenuList = ref([]);
+// const allMenuList = ref([]);
 
 const { tableData, loading, getList } = useTable({
   apiFn: goodsList,
@@ -56,11 +55,11 @@ const onAddOrUpdate = (data?: Recordable) => {
   addOrUpdateRef.value.init(data);
 };
 
-const getAllMenuList = async () => {
-  const { data } = await getMenuList();
-  allMenuList.value = data;
-};
-getAllMenuList();
+// const getAllMenuList = async () => {
+//   const { data } = await getMenuList();
+//   allMenuList.value = data;
+// };
+// getAllMenuList();
 
 const onDelete = async (data: Recordable) => {
   await goodsDelete(data.id);
