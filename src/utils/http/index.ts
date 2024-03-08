@@ -1,9 +1,6 @@
 import { useUserStore } from '@/store';
 import axios, { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 
-console.log(import.meta.env);
-console.log('看看地址12312321');
-
 const request = axios.create({
   baseURL: import.meta.env.VITE_GLOB_API_URL,
   timeout: 1000 * 60

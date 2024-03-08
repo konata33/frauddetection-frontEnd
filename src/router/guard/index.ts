@@ -11,7 +11,6 @@ export function createRouterGuard(router: Router) {
   const userStore = useUserStore();
   const routeStore = useRouteStore();
   router.beforeEach(async (to, from, next) => {
-    console.log(whiteList.includes(to.path));
     NProgress.start();
     // 访问登录页，有token不做跳转，没有跳转登录页
     if (to.path === '/login') {
