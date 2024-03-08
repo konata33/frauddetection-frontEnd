@@ -2,7 +2,7 @@
   <div class="flex-y-center justify-between px-25 <sm:px-8 absolute top-0 right-0 left-0 h-20">
     <div class="flex-y-center">
       <Icon name="local-icon-logo" size="24" color="var(--el-color-primary)" />
-      <div class="text-5 ml-4">Admin<span class="color-primary ml-1">PRO</span></div>
+      <div class="text-5 ml-4">涡轮台球查询</div>
     </div>
     <div class="flex-y-center">
       <el-switch
@@ -32,8 +32,8 @@
 </template>
 
 <script lang="ts" setup>
-import { Sunny, Moon } from '@element-plus/icons-vue';
 import { useAppStore, useThemeStore } from '@/store';
+import { Moon, Sunny } from '@element-plus/icons-vue';
 import { useI18n } from 'vue-i18n';
 
 const appStore = useAppStore();

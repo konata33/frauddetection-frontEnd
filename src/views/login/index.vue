@@ -29,19 +29,16 @@
             {{ $t('login.login') }}
           </el-button>
         </el-form-item>
-        <el-form-item>
-          <el-button class="w-full"> {{ $t('login.register') }}</el-button>
-        </el-form-item>
       </el-form>
     </el-card>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useUserStore } from '@/store';
 import { reactive, ref } from 'vue';
 import { Top } from './components';
 import { formRules } from './helpers/rule';
-import { useUserStore } from '@/store';
 
 defineOptions({ name: 'Login' });
 
@@ -51,8 +48,8 @@ const loading = ref(false);
 const userStore = useUserStore();
 
 const form = reactive({
-  username: 'admin',
-  password: '123456'
+  username: '',
+  password: ''
 });
 
 const onLogin = async () => {
@@ -68,7 +65,7 @@ const onLogin = async () => {
 
 <style lang="scss" scoped>
 .login-container {
-  @apply relative wh-full flex-center dark:bg-#101628 bg-no-repeat bg-center-top;
+  @apply absolute wh-full flex-center dark:bg-#101628 bg-no-repeat bg-center-top;
   background-image: url('/src/assets/image/background.svg');
 }
 </style>
