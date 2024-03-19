@@ -25,12 +25,11 @@
 <script lang="ts" setup>
 import { searchResultFromCode } from '@/api/app';
 import { searchResultItem } from '@/api/app/type';
-import { defineProps, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 
 const emit = defineEmits(['goBack']); //引入 emit
 const resultData = ref<searchResultItem | false>();
 
-// 使用 defineProps 来定义接收的 props
 const props = defineProps({
   searchValue: String
 });
