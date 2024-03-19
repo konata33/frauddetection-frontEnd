@@ -8,20 +8,18 @@
       <Search />
       <FullScreen />
       <Language />
-      <SystemMessage />
       <UserAvatar />
     </div>
   </el-header>
 </template>
 
 <script lang="ts" setup>
-import MenuCollapse from './MenuCollapse.vue';
 import Breadcrumb from './Breadcrumb.vue';
-import Search from './Search.vue';
-import Language from './Language.vue';
-import UserAvatar from './UserAvatar.vue';
-import SystemMessage from './SystemMessage.vue';
 import FullScreen from './FullScreen.vue';
+import Language from './Language.vue';
+import MenuCollapse from './MenuCollapse.vue';
+import Search from './Search.vue';
+import UserAvatar from './UserAvatar.vue';
 defineOptions({ name: 'PageHeader' });
 </script>
 
