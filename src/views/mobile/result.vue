@@ -25,7 +25,7 @@
 <script lang="ts" setup>
 import { searchResultFromCode } from '@/api/app';
 import { searchResultItem } from '@/api/app/type';
-import { ref, watch } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const emit = defineEmits(['goBack']); //引入 emit
 const resultData = ref<searchResultItem | false>();
@@ -34,7 +34,7 @@ const props = defineProps({
   searchValue: String
 });
 
-watch(props, async () => {
+onMounted(async () => {
   const searchResult = await searchResultFromCode(props.searchValue as string);
   resultData.value = searchResult ? searchResult : false;
 });

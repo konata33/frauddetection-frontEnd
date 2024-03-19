@@ -2,10 +2,8 @@
   <div class="container_box" :style="{ backgroundImage: `url(${searchBg})` }">
     <el-main class="main_content">
       <transition name="el-zoom-in-center">
-        <keep-alive>
-          <search-component v-if="!resultShown" @search="showResult" />
-          <search-result v-else :search-value="searchValue" @goBack="goBack" />
-        </keep-alive>
+        <search-component v-if="!resultShown" @search="showResult" />
+        <search-result v-else :search-value="searchValue" @goBack="goBack" />
       </transition>
     </el-main>
   </div>
